@@ -101,7 +101,7 @@ function InputField({
             {secure ? (
                 <TouchableOpacity onPress={() => setEyeIcon(!eyeIcon)} style={{ position: "absolute", right: RFPercentage(1), }}>
                     <MaterialCommunityIcons
-                        color={eyeIcon ? Colors.black : Colors.inputFieldBorder}
+                        color={eyeIcon ? Colors.darkGrey : Colors.darkGrey}
                         style={{ right: RFPercentage(1) }}
                         size={RFPercentage(3)}
                         name={eyeIcon ? "eye-outline" : "eye-off-outline"}
