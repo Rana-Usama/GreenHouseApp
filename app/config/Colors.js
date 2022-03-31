@@ -1,9 +1,9 @@
 export default {
+    primary: "#FFC011",
     blue: '#407eb9',
     white: "#fff",
     black: "black",
-    primary: "#7C8E94",
-    red: '#CB1818',
+    red: '#FB3B16',
     darkGrey2: '#2D2D2D',
     newInputFieldBorder: '#DEDEDE',
     grey: "#d5d5d5",
