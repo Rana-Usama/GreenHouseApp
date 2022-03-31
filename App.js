@@ -10,13 +10,14 @@ import ConfirmationScreen from './app/screens/ConfirmationScreen';
 import NewPasswordScreen from './app/screens/NewPasswordScreen';
 import ResetPasswordScreen from './app/screens/ResetPasswordScreen';
 import PlantDetailsScreen from './app/screens/PlantDetailsScreen';
+import MyPlantsScreen from './app/screens/MyPlantsScreen';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="PlantDetailsScreen">
+      <Stack.Navigator headerMode="none" initialRouteName="MyPlantsScreen">
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="SignupScreen" component={SignupScreen} />
@@ -24,9 +25,13 @@ export default function App() {
         <Stack.Screen name="NewPasswordScreen" component={NewPasswordScreen} />
         <Stack.Screen name="ResetPasswordScreen" component={ResetPasswordScreen} />
         <Stack.Screen name="PlantDetailsScreen" component={PlantDetailsScreen} />
+        <Stack.Screen name="MyPlantsScreen" component={MyPlantsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+
+// Happy Coding :)
 
 
