@@ -17,6 +17,7 @@ import PlantDetailsScreen from './app/screens/PlantDetailsScreen';
 import MyPlantsScreen from './app/screens/MyPlantsScreen';
 import ProfileScreen from './app/screens/ProfileScreen';
 import NewPlantScreen from './app/screens/NewPlantScreen';
+import HomeScreen from './app/screens/HomeScreen';
 
 const Stack = createStackNavigator();
 // const Tab = createBottomTabNavigator();
@@ -84,7 +85,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="NewPlantScreen">
+      <Stack.Navigator headerMode="none" initialRouteName="HomeScreen">
         {/* <Stack.Screen name="HomeTab" component={HomeTab} /> */}
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
@@ -96,6 +97,7 @@ export default function App() {
         <Stack.Screen name="MyPlantsScreen" component={MyPlantsScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
         <Stack.Screen name="NewPlantScreen" component={NewPlantScreen} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
