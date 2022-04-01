@@ -15,6 +15,7 @@ import NewPasswordScreen from './app/screens/NewPasswordScreen';
 import ResetPasswordScreen from './app/screens/ResetPasswordScreen';
 import PlantDetailsScreen from './app/screens/PlantDetailsScreen';
 import MyPlantsScreen from './app/screens/MyPlantsScreen';
+import ProfileScreen from './app/screens/ProfileScreen';
 
 const Stack = createStackNavigator();
 // const Tab = createBottomTabNavigator();
@@ -82,7 +83,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="MyPlantsScreen">
+      <Stack.Navigator headerMode="none" initialRouteName="ProfileScreen">
         {/* <Stack.Screen name="HomeTab" component={HomeTab} /> */}
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
@@ -92,6 +93,7 @@ export default function App() {
         <Stack.Screen name="ResetPasswordScreen" component={ResetPasswordScreen} />
         <Stack.Screen name="PlantDetailsScreen" component={PlantDetailsScreen} />
         <Stack.Screen name="MyPlantsScreen" component={MyPlantsScreen} />
+        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
