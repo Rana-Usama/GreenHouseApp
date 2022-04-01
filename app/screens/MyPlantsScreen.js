@@ -4,6 +4,7 @@ import { RFPercentage } from 'react-native-responsive-fontsize';
 
 //components
 import Screen from './../components/Screen';
+import PlantsCart from '../components/PlantsCart';
 
 //config
 import Colors from '../config/Colors';
@@ -34,6 +35,15 @@ function MyPlantsScreen(props) {
                 </TouchableOpacity>
             </View>
 
+            {/* Carts */}
+            <ScrollView style={{ flex: 1, width: '100%' }} >
+                <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                    <PlantsCart />
+                </View>
+                <View style={{ marginBottom: RFPercentage(10) }} />
+            </ScrollView>
+
+            {/* Add Icon */}
             <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: RFPercentage(4), bottom: RFPercentage(4) }} >
                 <Image style={{ width: RFPercentage(7), height: RFPercentage(7) }} source={require('../../assets/images/plus.png')} />
             </TouchableOpacity>
