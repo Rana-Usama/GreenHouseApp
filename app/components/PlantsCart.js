@@ -57,7 +57,7 @@ function PlantsCart(props) {
     return (
         <>
             {plantsCartData.map((item, i) => (
-                <View key={i} style={{ marginTop: i == 0 ? RFPercentage(5) : RFPercentage(1), width: '90%', height: RFPercentage(12), borderRadius: RFPercentage(2), backgroundColor: '#F7F7F7', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
+                <View key={i} style={{ marginTop: i == 0 ? RFPercentage(4.5) : RFPercentage(1), width: '90%', height: RFPercentage(12), borderRadius: RFPercentage(2), backgroundColor: '#F7F7F7', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
 
                     <View style={{ marginBottom: RFPercentage(2.5), alignSelf: 'center', marginLeft: RFPercentage(2), flexDirection: 'row', width: '90%', justifyContent: 'flex-start', alignItems: 'center' }} >
                         <View style={{ justifyContent: 'center', alignItems: 'center', width: RFPercentage(4), height: RFPercentage(4), borderRadius: RFPercentage(1), backgroundColor: Colors.primary }} >
@@ -68,7 +68,7 @@ function PlantsCart(props) {
                         <Text style={{ marginLeft: RFPercentage(2), color: Colors.black, fontSize: RFPercentage(2.6), fontWeight: 'bold' }} >
                             {item.title}
                         </Text>
-                        <TouchableOpacity activeOpacity={0.6} style={{ position: 'absolute', right: 0 }} >
+                        <TouchableOpacity activeOpacity={0.4} style={{ position: 'absolute', right: 0 }} >
                             <AntDesign name="delete" style={{ fontSize: RFPercentage(2.5) }} color={Colors.black} />
                         </TouchableOpacity>
                     </View>

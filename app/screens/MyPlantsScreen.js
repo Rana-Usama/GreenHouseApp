@@ -16,12 +16,18 @@ function MyPlantsScreen(props) {
     return (
         <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: "center", backgroundColor: Colors.white }}>
 
-            <Text style={{ color: Colors.black, fontWeight: 'bold', fontSize: RFPercentage(3.1), marginTop: RFPercentage(2.2) }} >
-                My Plants
-            </Text>
+            {activeButton == '1' ?
+                <Text style={{ color: Colors.black, fontWeight: 'bold', fontSize: RFPercentage(3.1), marginTop: RFPercentage(2.2) }} >
+                    My Plants
+                </Text>
+                :
+                <Text style={{ color: Colors.black, fontWeight: 'bold', fontSize: RFPercentage(3.1), marginTop: RFPercentage(2.2) }} >
+                    Plant Info
+                </Text>
+            }
 
             {/* buttons */}
-            <View style={{ marginTop: RFPercentage(2.5), width: '90%', height: RFPercentage(6.4), backgroundColor: '#F7F7F7', borderRadius: RFPercentage(20), flexDirection: 'row', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
+            <View style={{ marginTop: RFPercentage(3), width: '90%', height: RFPercentage(6.4), backgroundColor: '#F7F7F7', borderRadius: RFPercentage(20), flexDirection: 'row', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                 <TouchableOpacity onPress={() => setActiveButton('1')} activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center', width: RFPercentage(22), height: RFPercentage(5.4), borderRadius: RFPercentage(20), backgroundColor: activeButton == '1' ? Colors.primary : "#F7F7F7" }} >
                     <Text style={{ color: activeButton == '1' ? Colors.white : Colors.darkGrey, fontSize: RFPercentage(1.9) }} >
                         My Plants
@@ -35,16 +41,41 @@ function MyPlantsScreen(props) {
                 </TouchableOpacity>
             </View>
 
-            {/* Carts */}
-            <ScrollView style={{ flex: 1, width: '100%' }} >
-                <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                    <PlantsCart />
+            {activeButton == '1' ?
+                // First Button data
+                <ScrollView style={{ flex: 1, width: '100%' }} >
+                    <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                        <PlantsCart />
+                    </View>
+                    <View style={{ marginBottom: RFPercentage(10) }} />
+                </ScrollView>
+                :
+                // Second Button data
+                <View style={{ marginTop: RFPercentage(4), width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
+                    <View style={{ overflow: 'hidden', width: '45%', justifyContent: 'center', alignItems: 'flex-start' }} >
+                        <Image style={{ width: '100%', borderRadius: RFPercentage(2), height: RFPercentage(28) }} source={require('../../assets/images/p1.png')} />
+                        <Text style={{ marginTop: RFPercentage(2.5), color: Colors.black, fontSize: RFPercentage(2.4), fontWeight: 'bold' }}>
+                            Apple Tree
+                        </Text>
+                        <Text style={{ color: Colors.darkGrey, fontSize: RFPercentage(1.8), marginTop: RFPercentage(1) }} >
+                            Lorem ipsum djs ais
+                        </Text>
+                    </View>
+
+                    <View style={{ position: 'absolute', right: 0, overflow: 'hidden', width: '45%', justifyContent: 'center', alignItems: 'flex-start' }} >
+                        <Image style={{ width: '100%', borderRadius: RFPercentage(2), height: RFPercentage(28) }} source={require('../../assets/images/p2.png')} />
+                        <Text style={{ marginTop: RFPercentage(2.5), color: Colors.black, fontSize: RFPercentage(2.4), fontWeight: 'bold' }}>
+                            Apple Tree
+                        </Text>
+                        <Text style={{ color: Colors.darkGrey, fontSize: RFPercentage(1.8), marginTop: RFPercentage(1) }} >
+                            Lorem ipsum djs ais
+                        </Text>
+                    </View>
                 </View>
-                <View style={{ marginBottom: RFPercentage(10) }} />
-            </ScrollView>
+            }
 
             {/* Add Icon */}
-            <TouchableOpacity activeOpacity={0.8} style={{ position: 'absolute', right: RFPercentage(4), bottom: RFPercentage(4) }} >
+            <TouchableOpacity activeOpacity={0.9} style={{ position: 'absolute', right: RFPercentage(4), bottom: RFPercentage(4) }} >
                 <Image style={{ width: RFPercentage(7), height: RFPercentage(7) }} source={require('../../assets/images/plus.png')} />
             </TouchableOpacity>
         </Screen>
