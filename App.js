@@ -18,6 +18,7 @@ import MyPlantsScreen from './app/screens/MyPlantsScreen';
 import ProfileScreen from './app/screens/ProfileScreen';
 import NewPlantScreen from './app/screens/NewPlantScreen';
 import HomeScreen from './app/screens/HomeScreen';
+import ScheduleScreen from './app/screens/ScheduleScreen';
 
 const Stack = createStackNavigator();
 // const Tab = createBottomTabNavigator();
@@ -85,7 +86,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="HomeScreen">
+      <Stack.Navigator headerMode="none" initialRouteName="ScheduleScreen">
         {/* <Stack.Screen name="HomeTab" component={HomeTab} /> */}
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
@@ -98,6 +99,7 @@ export default function App() {
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
         <Stack.Screen name="NewPlantScreen" component={NewPlantScreen} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="ScheduleScreen" component={ScheduleScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
