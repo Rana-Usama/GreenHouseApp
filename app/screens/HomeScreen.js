@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, Image, ImageBackground, TouchableOpacity, FlatList, ScrollView, Switch } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
+import Slider from '@react-native-community/slider'
 
 //components
 import Screen from './../components/Screen';
+import MyAppButton from './../components/common/MyAppButton';
 
 //config
 import Colors from '../config/Colors';
@@ -11,6 +13,8 @@ import Colors from '../config/Colors';
 function HomeScreen(props) {
 
     const [activeButton, setActiveButton] = useState('1');
+
+    const [sliderValue, setSliderValue] = useState(0);
 
     const [isEnabled1, setIsEnabled1] = useState(false);
     const toggleSwitch1 = () => setIsEnabled1(previousState => !previousState);
@@ -58,7 +62,8 @@ function HomeScreen(props) {
             title: 'Rotor',
             iconSource: require('../../assets/images/fan.png'),
             toggleSwitch: toggleSwitch1,
-            isEnabled: isEnabled1
+            isEnabled: isEnabled1,
+            switch: true
         },
         {
             id: '2',
@@ -73,7 +78,9 @@ function HomeScreen(props) {
             title: 'Grow Lights',
             iconSource: require('../../assets/images/bb.png'),
             toggleSwitch: toggleSwitch3,
-            isEnabled: isEnabled3
+            isEnabled: isEnabled3,
+            slider: true,
+            switch: true
 
         },
         {
@@ -81,7 +88,8 @@ function HomeScreen(props) {
             title: 'Water Pump',
             iconSource: require('../../assets/images/watering.png'),
             toggleSwitch: toggleSwitch4,
-            isEnabled: isEnabled4
+            isEnabled: isEnabled4,
+            switch: true
 
         },
     ]
@@ -152,23 +160,83 @@ function HomeScreen(props) {
                             numColumns={2}
                             renderItem={({ item }) =>
                                 <View style={{ marginHorizontal: RFPercentage(0.5), marginTop: RFPercentage(1), width: RFPercentage(25), height: RFPercentage(30), backgroundColor: Colors.white, borderColor: Colors.primary, borderWidth: RFPercentage(0.1), borderRadius: RFPercentage(2), justifyContent: 'center', alignItems: 'center' }} >
-                                    <Image style={{ width: RFPercentage(9), height: RFPercentage(9) }} source={item.iconSource} />
+                                    <Image style={{ marginTop: item.slider ? RFPercentage(6) : 0, width: RFPercentage(9), height: RFPercentage(9) }} source={item.iconSource} />
 
                                     <View style={{ marginTop: RFPercentage(2), width: '100%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }} >
                                         <Text style={{ marginRight: RFPercentage(1), color: Colors.black, fontSize: RFPercentage(2.3), fontWeight: 'bold', marginTop: RFPercentage(1) }} >
                                             {item.title}
                                         </Text>
-                                        <Switch
-                                            trackColor={{ false: Colors.grey, true: "#fd8413" }}
-                                            thumbColor={item.isEnabled ? Colors.white : "#fd8413"}
-                                            ios_backgroundColor="#3e3e3e"
-                                            onValueChange={item.toggleSwitch}
-                                            value={item.isEnabled}
-                                        />
+                                        {item.switch ?
+                                            <Switch
+                                                trackColor={{ false: Colors.grey, true: "#fd8413" }}
+                                                thumbColor={item.isEnabled ? Colors.white : "#fd8413"}
+                                                ios_backgroundColor={"#F7F7F7"}
+                                                onValueChange={item.toggleSwitch}
+                                                value={item.isEnabled}
+                                            />
+                                            :
+                                            null
+                                        }
                                     </View>
+
+                                    {item.slider ?
+                                        <View style={{ width: '90%', justifyContent: 'center', alignItems: 'center', marginTop: RFPercentage((1)) }} >
+                                            <Slider
+                                                style={{ width: '100%' }}
+                                                minimumValue={0}
+                                                thumbTintColor={'#fd8413'}
+                                                maximumValue={500}
+                                                minimumTrackTintColor="#fd8413"
+                                                maximumTrackTintColor="#F7F7F7"
+                                                value={sliderValue}
+                                                onValueChange={
+                                                    (sliderValue) => setSliderValue(sliderValue)
+                                                }
+                                            />
+                                        </View>
+                                        :
+                                        null
+                                    }
 
                                 </View>
                             }
+                        />
+                    </View>
+
+                    {/* Buttons */}
+                    <View style={{ marginTop: RFPercentage(4), width: '92%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
+                        <MyAppButton
+                            title="Delete System 1"
+                            padding={RFPercentage(1.6)}
+                            // onPress={() => props.navigation.navigate("DriverIDScreen")}
+                            icon={true}
+                            iconName={'delete'}
+                            iconColor={Colors.red}
+                            backgroundColor={Colors.white}
+                            borderWidth={RFPercentage(0.1)}
+                            fontSize={RFPercentage(2.2)}
+                            borderColor={Colors.grey}
+                            color={Colors.red}
+                            bold={false}
+                            borderRadius={RFPercentage(1.2)}
+                            width={"45%"}
+                        />
+                        <View style={{ marginLeft: RFPercentage(2) }} />
+                        <MyAppButton
+                            title="Add new system"
+                            padding={RFPercentage(1.6)}
+                            // onPress={() => handleConfirm()}
+                            backgroundColor={Colors.primary}
+                            icon={true}
+                            iconName={'plus'}
+                            iconColor={Colors.white}
+                            borderWidth={RFPercentage(0.1)}
+                            borderColor={Colors.primary}
+                            color={Colors.white}
+                            bold={false}
+                            fontSize={RFPercentage(2.2)}
+                            borderRadius={RFPercentage(1.2)}
+                            width={"45%"}
                         />
                     </View>
 
