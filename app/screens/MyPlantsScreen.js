@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, Image, ImageBackground, Platform, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 //components
 import Screen from './../components/Screen';
 import PlantsCart from '../components/PlantsCart';
+import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
@@ -53,7 +54,10 @@ function MyPlantsScreen(props) {
                 // Second Button data
                 <View style={{ marginTop: RFPercentage(4), width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
                     <View style={{ overflow: 'hidden', width: '45%', justifyContent: 'center', alignItems: 'flex-start' }} >
-                        <Image style={{ width: '100%', borderRadius: RFPercentage(2), height: RFPercentage(28) }} source={require('../../assets/images/p1.png')} />
+                        <TouchableOpacity style={{ width: '100%' }} activeOpacity={0.8} onPress={() => props.navigation.navigate("PlantDetailsScreen")}>
+
+                            <Image style={{ width: '100%', borderRadius: RFPercentage(2), height: RFPercentage(28) }} source={require('../../assets/images/p1.png')} />
+                        </TouchableOpacity>
                         <Text style={{ fontFamily: 'Roboto_700Bold', marginTop: RFPercentage(2.5), color: Colors.black, fontSize: RFPercentage(2.4), fontWeight: 'bold' }}>
                             Apple Tree
                         </Text>
@@ -63,7 +67,10 @@ function MyPlantsScreen(props) {
                     </View>
 
                     <View style={{ position: 'absolute', right: 0, overflow: 'hidden', width: '45%', justifyContent: 'center', alignItems: 'flex-start' }} >
-                        <Image style={{ width: '100%', borderRadius: RFPercentage(2), height: RFPercentage(28) }} source={require('../../assets/images/p2.png')} />
+                        <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate("PlantDetailsScreen")} style={{ width: '100%' }} >
+
+                            <Image style={{ width: '100%', borderRadius: RFPercentage(2), height: RFPercentage(28) }} source={require('../../assets/images/p1.png')} />
+                        </TouchableOpacity>
                         <Text style={{ fontFamily: 'Roboto_700Bold', marginTop: RFPercentage(2.5), color: Colors.black, fontSize: RFPercentage(2.4), fontWeight: 'bold' }}>
                             Apple Tree
                         </Text>
@@ -75,9 +82,12 @@ function MyPlantsScreen(props) {
             }
 
             {/* Add Icon */}
-            <TouchableOpacity activeOpacity={0.9} style={{ position: 'absolute', right: RFPercentage(4), bottom: RFPercentage(4) }} >
+            <TouchableOpacity activeOpacity={0.9} style={{ position: 'absolute', right: RFPercentage(4), bottom: RFPercentage(9) }} >
                 <Image style={{ width: RFPercentage(7), height: RFPercentage(7) }} source={require('../../assets/images/plus.png')} />
             </TouchableOpacity>
+
+            {/* Bottom tab */}
+            <BottomTab props={props} />
         </Screen>
     );
 }

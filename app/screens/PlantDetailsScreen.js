@@ -7,7 +7,6 @@ import Screen from './../components/Screen';
 
 //config
 import Colors from '../config/Colors';
-import { Roboto_700Bold } from '@expo-google-fonts/roboto';
 
 function PlantDetailsScreen(props) {
 

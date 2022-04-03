@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Image, ImageBackground } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { Entypo } from '@expo/vector-icons';
 import { TextInput } from 'react-native-gesture-handler';
@@ -32,7 +32,7 @@ function NewPlantScreen(props) {
     return (
         <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: "center", backgroundColor: Colors.white }}>
 
-            <TouchableOpacity activeOpacity={0.4} style={{ position: 'absolute', left: RFPercentage(2), top: RFPercentage(3) }} >
+            <TouchableOpacity onPress={() => props.navigation.navigate("HomeScreen")} activeOpacity={0.4} style={{ position: 'absolute', left: RFPercentage(2), top: RFPercentage(3) }} >
                 <Entypo name="chevron-small-left" style={{ fontSize: RFPercentage(4.5) }} color={Colors.black} />
             </TouchableOpacity>
 

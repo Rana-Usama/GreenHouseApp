@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, Image, ImageBackground, TouchableOpacity, FlatList, ScrollView, Switch } from 'react-native'
+import { View, Text, Image, TouchableOpacity, FlatList, ScrollView, Switch } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import Slider from '@react-native-community/slider'
 
 //components
 import Screen from './../components/Screen';
 import MyAppButton from './../components/common/MyAppButton';
+import BottomTab from './../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
@@ -223,7 +224,7 @@ function HomeScreen(props) {
                         <View style={{ marginLeft: RFPercentage(-12) }} />
                         <MyAppButton
                             title="Add new system"
-                            // onPress={() => props.navigation.navigate("ResetPasswordScreen")}
+                            onPress={() => props.navigation.navigate("NewPlantScreen")}
                             gradient={true}
                             icon={true}
                             iconName={'plus'}
@@ -240,6 +241,9 @@ function HomeScreen(props) {
                 </View>
                 <View style={{ marginBottom: RFPercentage(15) }} />
             </ScrollView>
+
+            {/* Bottom tab */}
+            <BottomTab props={props} />
         </Screen>
     );
 }

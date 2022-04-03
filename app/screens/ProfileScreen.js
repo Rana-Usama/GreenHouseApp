@@ -6,6 +6,7 @@ import { Entypo } from '@expo/vector-icons';
 //components
 import Screen from './../components/Screen';
 import MyAppButton from './../components/common/MyAppButton';
+import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
@@ -15,7 +16,7 @@ function ProfileScreen(props) {
         <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: "center", backgroundColor: Colors.white }}>
             {/* Nav */}
             <ImageBackground style={{ width: '100%', height: RFPercentage(24) }} source={require('../../assets/images/top.png')} >
-                <TouchableOpacity activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(4), left: RFPercentage(3) }} >
+                <TouchableOpacity onPress={() => props.navigation.navigate("HomeScreen")} activeOpacity={0.7} style={{ position: 'absolute', top: RFPercentage(4), left: RFPercentage(3) }} >
                     <Entypo name="chevron-small-left" style={{ fontSize: RFPercentage(4) }} color={Colors.white} />
                 </TouchableOpacity>
                 <View style={{ width: '100%', height: RFPercentage(4), borderTopLeftRadius: RFPercentage(6), borderTopRightRadius: RFPercentage(6), backgroundColor: Colors.white, position: 'absolute', bottom: 0 }} />
@@ -97,6 +98,9 @@ function ProfileScreen(props) {
                     width={"90%"}
                 />
             </View>
+
+            {/* Bottom tab */}
+            <BottomTab props={props} />
 
         </Screen>
     );

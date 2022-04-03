@@ -8,9 +8,11 @@ import { Ionicons } from '@expo/vector-icons';
 //components
 import Screen from './../components/Screen';
 import MyAppButton from './../components/common/MyAppButton';
+import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
+import HomeScreen from './HomeScreen';
 
 function ScheduleScreen(props) {
 
@@ -53,7 +55,7 @@ function ScheduleScreen(props) {
                 <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.black, fontWeight: 'bold', fontSize: RFPercentage(3.2) }} >
                     Schedule
                 </Text>
-                <TouchableOpacity activeOpacity={0.4} style={{ position: 'absolute', left: 0 }} >
+                <TouchableOpacity onPress={() => props.navigation.navigate("HomeScreen")} activeOpacity={0.4} style={{ position: 'absolute', left: 0 }} >
                     <Entypo name="chevron-small-left" style={{ fontSize: RFPercentage(4.5) }} color={Colors.darkGrey} />
                 </TouchableOpacity>
             </View>
@@ -231,6 +233,8 @@ function ScheduleScreen(props) {
                 <View style={{ marginBottom: RFPercentage(15) }} />
             </ScrollView>
 
+            {/* Bottom Tab */}
+            <BottomTab props={props} />
         </Screen>
     );
 }

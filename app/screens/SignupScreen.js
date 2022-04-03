@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, ImageBackground, TouchableOpacity, Platform, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, Image, TouchableOpacity, Platform, StyleSheet, ScrollView } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 //compoenents
@@ -126,7 +126,7 @@ function SignupScreen(props) {
                     <View style={{ marginTop: RFPercentage(6), width: '100%', justifyContent: 'flex-start', alignItems: 'center' }} >
                         <MyAppButton
                             title="Sign up"
-                            //  onPress={() => props.navigation.navigate("SignupScreen")}
+                            onPress={() => props.navigation.navigate("ConfirmationScreen")}
                             gradient={true}
                             borderColor={Colors.primary}
                             color={Colors.white}

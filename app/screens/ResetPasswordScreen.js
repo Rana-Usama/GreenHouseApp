@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, Platform } from 'react-native'
+import { View, Text, StyleSheet, Platform } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 //components

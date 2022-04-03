@@ -5,11 +5,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Roboto_700Bold, Roboto_400Regular, Roboto_500Medium, useFonts } from "@expo-google-fonts/roboto"
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
-// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-// import { Octicons } from "@expo/vector-icons";
-// import { RFPercentage } from 'react-native-responsive-fontsize';
-// import Colors from './app/config/Colors';
-
 //screens
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import LoginScreen from './app/screens/LoginScreen';
@@ -28,8 +23,6 @@ import ScheduleScreen from './app/screens/ScheduleScreen';
 import Colors from './app/config/Colors';
 
 const Stack = createStackNavigator();
-// const Tab = createBottomTabNavigator();
-
 
 export default function App() {
 
@@ -39,64 +32,6 @@ export default function App() {
     Roboto_700Bold
   })
 
-  // const HomeTab = () => (
-  //   <Tab.Navigator
-  //     initialRouteName="MyPlantsScreen"
-  //     screenOptions={{
-  //       headerShown: false,
-  //       tabBarHideOnKeyboard: true,
-  //       showLabel: false,
-  //       style: { height: RFPercentage(8.2), borderRadius: RFPercentage(3.5) },
-  //       tabStyle: { backgroundColor: Colors.white },
-  //       activeTintColor: Colors.primary,
-  //       inactiveTintColor: Colors.grey,
-  //     }}
-  // tabBarOptions={{
-  //   keyboardHidesTabBar: true
-  // }}
-  // >
-  //   <Tab.Screen
-  //     name="MyPlant"
-  //     component={MyPlantsScreen}
-  //     options={{
-  //       header: () => null,
-  //       tabBarIcon: ({ color }) => (
-  //         <Octicons name="sign-in" color={color} size={RFPercentage(3)} />
-  //       ),
-  //     }}
-  //   />
-  {/* <Tab.Screen
-        name="Signup"
-        component={SignupScreen}
-        options={{
-          header: () => null,
-          tabBarIcon: ({ color }) => (
-            <Octicons name="sign-in" color={color} size={RFPercentage(3)} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Signup"
-        component={SignupScreen}
-        options={{
-          header: () => null,
-          tabBarIcon: ({ color }) => (
-            <Octicons name="sign-in" color={color} size={RFPercentage(3)} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Signup"
-        component={SignupScreen}
-        options={{
-          header: () => null,
-          tabBarIcon: ({ color }) => (
-            <Octicons name="sign-in" color={color} size={RFPercentage(3)} />
-          ),
-        }}
-      /> */}
-  //   </Tab.Navigator>
-  // );
 
   if (!fontsLoaded) return <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }} >
     <ActivityIndicator size={RFPercentage(6)} color={Colors.primary} />
@@ -104,8 +39,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="WelcomeScreen">
-        {/* <Stack.Screen name="HomeTab" component={HomeTab} /> */}
+      <Stack.Navigator headerMode="none" initialRouteName="HomeScreen">
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="SignupScreen" component={SignupScreen} />

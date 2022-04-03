@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, Platform } from 'react-native'
+import { View, Text, StyleSheet, Platform } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
 
 //components
@@ -10,7 +10,6 @@ import MyAppButton from './../components/common/MyAppButton';
 
 //config
 import Colors from '../config/Colors';
-import { Roboto_700Bold, Roboto_400Regular } from '@expo-google-fonts/roboto';
 
 function NewPasswordScreen(props) {
 
@@ -96,7 +95,7 @@ function NewPasswordScreen(props) {
             <View style={{ marginTop: RFPercentage(6), width: '100%', justifyContent: 'flex-start', alignItems: 'center' }} >
                 <MyAppButton
                     title="Confirm"
-                    // onPress={() => props.navigation.navigate("NewPasswordScreen")}
+                    onPress={() => props.navigation.navigate("HomeScreen")}
                     gradient={true}
                     borderColor={Colors.primary}
                     color={Colors.white}
