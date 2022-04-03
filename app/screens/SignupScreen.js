@@ -79,11 +79,11 @@ function SignupScreen(props) {
             <ScrollView style={{ flex: 1, width: '100%' }} >
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
 
-                    <View style={{ marginTop: RFPercentage(7), width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
-                        <Text style={{ color: Colors.black, fontSize: RFPercentage(4), fontWeight: Platform.OS == 'android' ? 'bold' : '600' }} >
+                    <View style={{ marginTop: RFPercentage(6), width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
+                        <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.black, fontSize: RFPercentage(4), fontWeight: Platform.OS == 'android' ? 'bold' : '600' }} >
                             Signup
                         </Text>
-                        <Text style={{ marginTop: RFPercentage(3.2), fontSize: RFPercentage(1.9) }} >
+                        <Text style={{ fontFamily: 'Roboto_400Regular', marginTop: RFPercentage(3.2), fontSize: RFPercentage(1.9) }} >
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac cras ut praesent ligula urna nisl.
                         </Text>
                     </View>
@@ -97,13 +97,12 @@ function SignupScreen(props) {
                                     placeholderColor={Colors.darkGrey}
                                     height={RFPercentage(6.5)}
                                     backgroundColor={Colors.white}
-                                    // onTouchStart={() => setGreenBorder(true)}
-                                    // onTouchEnd={() => setGreenBorder(false)}
                                     borderWidth={RFPercentage(0.2)}
                                     borderColor={Colors.grey}
                                     secure={item.secure}
                                     borderRadius={RFPercentage(1.3)}
                                     fontSize={RFPercentage(2)}
+                                    fontFamily={'Roboto_400Regular'}
                                     handleFeild={(text) => handleChange(text, i)}
                                     value={item.value}
                                     width={"92%"}
@@ -113,11 +112,11 @@ function SignupScreen(props) {
                     </View>
 
                     <View style={{ marginTop: RFPercentage(3.8), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
-                        <Text style={{ color: Colors.black, fontSize: RFPercentage(1.9), fontWeight: '500' }} >
+                        <Text style={{ fontFamily: 'Roboto_400Regular', color: Colors.black, fontSize: RFPercentage(1.9), fontWeight: '500' }} >
                             Don't have an account?
                         </Text>
                         <TouchableOpacity activeOpacity={0.7} style={{ marginLeft: RFPercentage(0.6) }} >
-                            <Text style={{ color: Colors.red, fontSize: RFPercentage(1.9), fontWeight: '500', textDecorationLine: 'underline' }} >
+                            <Text style={{ fontFamily: 'Roboto_400Regular', color: Colors.red, fontSize: RFPercentage(1.9), fontWeight: '500', textDecorationLine: 'underline' }} >
                                 Login
                             </Text>
                         </TouchableOpacity>
@@ -127,13 +126,11 @@ function SignupScreen(props) {
                     <View style={{ marginTop: RFPercentage(6), width: '100%', justifyContent: 'flex-start', alignItems: 'center' }} >
                         <MyAppButton
                             title="Sign up"
-                            padding={RFPercentage(1.7)}
-                            onPress={() => handleSignup()}
-                            backgroundColor={Colors.primary}
-                            borderWidth={RFPercentage(0.1)}
+                            //  onPress={() => props.navigation.navigate("SignupScreen")}
+                            gradient={true}
                             borderColor={Colors.primary}
                             color={Colors.white}
-                            bold={false}
+                            fontFamily={'Roboto_500Medium'}
                             fontSize={RFPercentage(2.2)}
                             borderRadius={RFPercentage(1.2)}
                             width={"90%"}
@@ -153,7 +150,7 @@ function SignupScreen(props) {
                     {socialLinksData.map((item, i) => (
                         <TouchableOpacity key={i} activeOpacity={0.8} style={{ marginTop: i == 0 ? RFPercentage(4) : RFPercentage(1.6), width: '90%', height: RFPercentage(6.6), backgroundColor: item.backColor, borderRadius: RFPercentage(1.2), flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} >
                             <Image style={{ width: item.width, height: item.height, marginRight: RFPercentage(1) }} source={item.logoSource} />
-                            <Text style={{ color: Colors.white, fontSize: RFPercentage(2.1) }} >
+                            <Text style={{ fontFamily: 'Roboto_400Regular', color: Colors.white, fontSize: RFPercentage(2.1) }} >
                                 {item.title}
                             </Text>
                         </TouchableOpacity>

@@ -10,6 +10,7 @@ import MyAppButton from './../components/common/MyAppButton';
 
 //config
 import Colors from '../config/Colors';
+import { Roboto_700Bold, Roboto_400Regular } from '@expo-google-fonts/roboto';
 
 function NewPasswordScreen(props) {
 
@@ -59,10 +60,10 @@ function NewPasswordScreen(props) {
             <LoadingModal show={indicator} />
 
             <View style={{ marginTop: RFPercentage(7), width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
-                <Text style={{ color: Colors.black, fontSize: RFPercentage(4), fontWeight: Platform.OS == 'android' ? 'bold' : '600' }} >
+                <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.black, fontSize: RFPercentage(4), fontWeight: Platform.OS == 'android' ? 'bold' : '600' }} >
                     Enter New Password
                 </Text>
-                <Text style={{ marginTop: RFPercentage(3.2), fontSize: RFPercentage(1.9) }} >
+                <Text style={{ fontFamily: 'Roboto_400Regular', marginTop: RFPercentage(3.2), fontSize: RFPercentage(1.9) }} >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac cras ut praesent ligula urna nisl.
                 </Text>
             </View>
@@ -95,13 +96,11 @@ function NewPasswordScreen(props) {
             <View style={{ marginTop: RFPercentage(6), width: '100%', justifyContent: 'flex-start', alignItems: 'center' }} >
                 <MyAppButton
                     title="Confirm"
-                    padding={RFPercentage(1.6)}
-                    onPress={() => handleConfirm()}
-                    backgroundColor={Colors.primary}
-                    borderWidth={RFPercentage(0.1)}
+                    // onPress={() => props.navigation.navigate("NewPasswordScreen")}
+                    gradient={true}
                     borderColor={Colors.primary}
                     color={Colors.white}
-                    bold={false}
+                    fontFamily={'Roboto_500Medium'}
                     fontSize={RFPercentage(2.2)}
                     borderRadius={RFPercentage(1.2)}
                     width={"90%"}
@@ -109,15 +108,13 @@ function NewPasswordScreen(props) {
                 <View style={{ marginTop: RFPercentage(2) }} />
                 <MyAppButton
                     title="Cancel"
-                    padding={RFPercentage(1.6)}
-                    // onPress={() => props.navigation.navigate("DriverIDScreen")}
+                    // onPress={() => props.navigation.navigate("LoginScreen")}
                     backgroundColor={Colors.white}
+                    fontFamily={'Roboto_500Medium'}
                     borderWidth={RFPercentage(0.1)}
                     fontSize={RFPercentage(2.2)}
                     borderColor={Colors.grey}
                     color={Colors.red}
-                    bold={false}
-                    borderRadius={RFPercentage(1.2)}
                     width={"90%"}
                 />
             </View>

@@ -26,7 +26,7 @@ function ProfileScreen(props) {
                 <Image style={{ marginTop: RFPercentage(-15), width: RFPercentage(22), height: RFPercentage(22) }} source={require('../../assets/images/profile.png')} />
             </TouchableOpacity>
 
-            <Text style={{ color: Colors.black, fontSize: RFPercentage(3.5), fontWeight: 'bold', marginTop: RFPercentage(2) }}>
+            <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.black, fontSize: RFPercentage(3.5), fontWeight: 'bold', marginTop: RFPercentage(2) }}>
                 Jhon Wick
             </Text>
 
@@ -34,27 +34,27 @@ function ProfileScreen(props) {
             <View style={{ marginTop: RFPercentage(3), width: '86%', height: RFPercentage(25), backgroundColor: Colors.white, borderColor: Colors.grey, borderWidth: RFPercentage(0.1), borderRadius: RFPercentage(2) }} >
 
                 <View style={{ marginTop: RFPercentage(3), width: '90%', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
-                    <Text style={{ color: Colors.black, fontSize: RFPercentage(2.3), fontWeight: 'bold' }} >
+                    <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.black, fontSize: RFPercentage(2.3), fontWeight: 'bold' }} >
                         Email
                     </Text>
-                    <Text style={{ color: Colors.darkGrey, fontSize: RFPercentage(1.9), position: 'absolute', right: 0 }} >
+                    <Text style={{ fontFamily: 'Roboto_500Medium', color: Colors.darkGrey, fontSize: RFPercentage(1.9), position: 'absolute', right: 0 }} >
                         amongus@example.com
                     </Text>
                 </View>
                 <View style={{ marginTop: RFPercentage(2), width: '100%', height: RFPercentage(0.1), backgroundColor: Colors.grey }} />
 
                 <View style={{ marginTop: RFPercentage(3), width: '90%', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
-                    <Text style={{ color: Colors.black, fontSize: RFPercentage(2.3), fontWeight: 'bold' }} >
+                    <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.black, fontSize: RFPercentage(2.3), fontWeight: 'bold' }} >
                         Wi-Fi ID
                     </Text>
-                    <Text style={{ color: Colors.darkGrey, fontSize: RFPercentage(1.9), position: 'absolute', right: 0 }} >
+                    <Text style={{ fontFamily: 'Roboto_500Medium', color: Colors.darkGrey, fontSize: RFPercentage(1.9), position: 'absolute', right: 0 }} >
                         123jdsfis
                     </Text>
                 </View>
                 <View style={{ marginTop: RFPercentage(2), width: '100%', height: RFPercentage(0.1), backgroundColor: Colors.grey }} />
 
                 <View style={{ marginTop: RFPercentage(3), width: '90%', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center' }} >
-                    <Text style={{ color: Colors.black, fontSize: RFPercentage(2.3), fontWeight: 'bold' }} >
+                    <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.black, fontSize: RFPercentage(2.3), fontWeight: 'bold' }} >
                         Wi-Fi Config
                     </Text>
                     <TouchableOpacity style={{ position: 'absolute', right: 0 }} >
@@ -67,36 +67,34 @@ function ProfileScreen(props) {
             <View style={{ marginTop: RFPercentage(4), width: '100%', justifyContent: 'flex-start', alignItems: 'center' }} >
                 <MyAppButton
                     title="Restart Device"
-                    padding={RFPercentage(1.6)}
-                    // onPress={() => handleConfirm()}
-                    backgroundColor={Colors.primary}
+                    // onPress={() => props.navigation.navigate("NewPasswordScreen")}
+                    gradient={true}
                     icon={true}
                     iconName={'restart'}
                     iconColor={Colors.white}
-                    borderWidth={RFPercentage(0.1)}
                     borderColor={Colors.primary}
                     color={Colors.white}
+                    fontFamily={'Roboto_500Medium'}
                     bold={false}
                     fontSize={RFPercentage(2.2)}
                     borderRadius={RFPercentage(1.2)}
-                    width={"85%"}
+                    width={"90%"}
                 />
                 <View style={{ marginTop: RFPercentage(2) }} />
                 <MyAppButton
-                    title="Logout"
-                    padding={RFPercentage(1.6)}
-                    // onPress={() => props.navigation.navigate("DriverIDScreen")}
+                    title="Log out"
                     icon={true}
                     iconName={'logout-variant'}
                     iconColor={Colors.red}
+                    // onPress={() => props.navigation.navigate("LoginScreen")}
                     backgroundColor={Colors.white}
+                    fontFamily={'Roboto_500Medium'}
                     borderWidth={RFPercentage(0.1)}
+                    bold={false}
                     fontSize={RFPercentage(2.2)}
                     borderColor={Colors.grey}
                     color={Colors.red}
-                    bold={false}
-                    borderRadius={RFPercentage(1.2)}
-                    width={"85%"}
+                    width={"90%"}
                 />
             </View>
 

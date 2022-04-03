@@ -99,10 +99,10 @@ function HomeScreen(props) {
 
             {/* Nav */}
             <View style={{ marginTop: RFPercentage(4), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
-                <Text style={{ color: Colors.black, fontSize: RFPercentage(2.5), fontWeight: 'bold' }} >
+                <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.black, fontSize: RFPercentage(2.5), fontWeight: 'bold' }} >
                     Welcome Back
                 </Text>
-                <Text style={{ color: Colors.red, fontSize: RFPercentage(2.5), fontWeight: 'bold' }} >
+                <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.red, fontSize: RFPercentage(2.5), fontWeight: 'bold' }} >
                     ,Jhon
                 </Text>
                 <View style={{ position: 'absolute', right: 0, backgroundColor: Colors.white, width: RFPercentage(7), height: RFPercentage(7), borderColor: Colors.primary, borderWidth: RFPercentage(0.1), justifyContent: 'center', alignItems: 'center', borderRadius: RFPercentage(30) }} >
@@ -114,13 +114,13 @@ function HomeScreen(props) {
             <View style={{ marginTop: RFPercentage(6), flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', width: '91%' }} >
                 <View style={{ width: '60%', height: RFPercentage(6), backgroundColor: '#F7F7F7', borderRadius: RFPercentage(20), flexDirection: 'row', justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
                     <TouchableOpacity onPress={() => setActiveButton('1')} activeOpacity={0.8} style={{ justifyContent: 'center', alignItems: 'center', width: '45%', height: RFPercentage(5), borderRadius: RFPercentage(20), backgroundColor: activeButton == '1' ? Colors.primary : "#F7F7F7" }} >
-                        <Text style={{ color: activeButton == '1' ? Colors.white : Colors.darkGrey, fontSize: RFPercentage(1.9) }} >
+                        <Text style={{ fontFamily: 'Roboto_400Regular', color: activeButton == '1' ? Colors.white : Colors.darkGrey, fontSize: RFPercentage(1.9) }} >
                             System 1
                         </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity activeOpacity={0.8} onPress={() => setActiveButton('2')} style={{ justifyContent: 'center', alignItems: 'center', marginLeft: RFPercentage(2), width: '45%', height: RFPercentage(5), borderRadius: RFPercentage(20), backgroundColor: activeButton == '2' ? Colors.primary : "#F7F7F7" }} >
-                        <Text style={{ color: activeButton == '2' ? Colors.white : Colors.darkGrey, fontSize: RFPercentage(1.9) }} >
+                        <Text style={{ fontFamily: 'Roboto_400Regular', color: activeButton == '2' ? Colors.white : Colors.darkGrey, fontSize: RFPercentage(1.9) }} >
                             System 2
                         </Text>
                     </TouchableOpacity>
@@ -139,7 +139,7 @@ function HomeScreen(props) {
                             renderItem={({ item }) =>
                                 <View style={{ marginHorizontal: RFPercentage(0.5), marginTop: RFPercentage(1), width: RFPercentage(24.5), height: RFPercentage(9.5), backgroundColor: '#F7F7F7', borderRadius: RFPercentage(2), justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row' }} >
                                     <Image style={{ marginLeft: RFPercentage(3), width: RFPercentage(4.5), height: RFPercentage(5) }} source={item.iconSource} />
-                                    <Text style={{ color: Colors.black, fontWeight: 'bold', fontSize: RFPercentage(2.5), marginLeft: RFPercentage(0.6) }} >
+                                    <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.black, fontWeight: 'bold', fontSize: RFPercentage(2.5), marginLeft: RFPercentage(0.6) }} >
                                         {item.title}
                                     </Text>
                                 </View>
@@ -148,7 +148,7 @@ function HomeScreen(props) {
                     </View>
 
                     <View style={{ marginTop: RFPercentage(4), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
-                        <Text style={{ color: Colors.black, fontSize: RFPercentage(2.7), fontWeight: 'bold' }} >
+                        <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.black, fontSize: RFPercentage(2.7), fontWeight: 'bold' }} >
                             Devices
                         </Text>
                     </View>
@@ -163,7 +163,7 @@ function HomeScreen(props) {
                                     <Image style={{ marginTop: item.slider ? RFPercentage(6) : 0, width: RFPercentage(9), height: RFPercentage(9) }} source={item.iconSource} />
 
                                     <View style={{ marginTop: RFPercentage(2), width: '100%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }} >
-                                        <Text style={{ marginRight: RFPercentage(1), color: Colors.black, fontSize: RFPercentage(2.3), fontWeight: 'bold', marginTop: RFPercentage(1) }} >
+                                        <Text style={{ fontFamily: 'Roboto_700Bold', marginRight: RFPercentage(1), color: Colors.black, fontSize: RFPercentage(2.3), fontWeight: 'bold', marginTop: RFPercentage(1) }} >
                                             {item.title}
                                         </Text>
                                         {item.switch ?
@@ -204,7 +204,7 @@ function HomeScreen(props) {
                     </View>
 
                     {/* Buttons */}
-                    <View style={{ marginTop: RFPercentage(4), width: '92%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
+                    <View style={{ marginTop: RFPercentage(4), width: '100%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
                         <MyAppButton
                             title="Delete System 1"
                             padding={RFPercentage(1.6)}
@@ -212,31 +212,28 @@ function HomeScreen(props) {
                             icon={true}
                             iconName={'delete'}
                             iconColor={Colors.red}
-                            backgroundColor={Colors.white}
                             borderWidth={RFPercentage(0.1)}
-                            fontSize={RFPercentage(2.2)}
+                            backgroundColor={Colors.white}
+                            fontSize={RFPercentage(2)}
                             borderColor={Colors.grey}
                             color={Colors.red}
                             bold={false}
-                            borderRadius={RFPercentage(1.2)}
-                            width={"45%"}
+                            width={"65%"}
                         />
-                        <View style={{ marginLeft: RFPercentage(2) }} />
+                        <View style={{ marginLeft: RFPercentage(-12) }} />
                         <MyAppButton
                             title="Add new system"
-                            padding={RFPercentage(1.6)}
-                            // onPress={() => handleConfirm()}
-                            backgroundColor={Colors.primary}
+                            // onPress={() => props.navigation.navigate("ResetPasswordScreen")}
+                            gradient={true}
                             icon={true}
                             iconName={'plus'}
                             iconColor={Colors.white}
-                            borderWidth={RFPercentage(0.1)}
                             borderColor={Colors.primary}
                             color={Colors.white}
-                            bold={false}
-                            fontSize={RFPercentage(2.2)}
+                            fontFamily={'Roboto_500Medium'}
+                            fontSize={RFPercentage(2)}
                             borderRadius={RFPercentage(1.2)}
-                            width={"45%"}
+                            width={"65%"}
                         />
                     </View>
 

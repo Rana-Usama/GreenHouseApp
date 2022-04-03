@@ -10,6 +10,7 @@ import MyAppButton from '../components/common/MyAppButton';
 
 //config
 import Colors from '../config/Colors';
+import { Roboto_400Regular } from '@expo-google-fonts/roboto';
 
 function LoginScreen(props) {
 
@@ -79,7 +80,7 @@ function LoginScreen(props) {
             <ScrollView style={{ flex: 1, width: '100%' }} >
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
 
-                    <View style={{ marginTop: RFPercentage(7), width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
+                    <View style={{ marginTop: RFPercentage(6), width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
                         <Text style={{ color: Colors.black, fontSize: RFPercentage(4), fontWeight: Platform.OS == 'android' ? 'bold' : '600' }} >
                             Login
                         </Text>
@@ -113,11 +114,11 @@ function LoginScreen(props) {
                     </View>
 
                     <View style={{ marginTop: RFPercentage(3.8), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
-                        <Text style={{ color: Colors.black, fontSize: RFPercentage(1.9), fontWeight: '500' }} >
+                        <Text style={{ fontFamily: 'Roboto_400Regular', color: Colors.black, fontSize: RFPercentage(1.9), fontWeight: '500' }} >
                             Don't have an account?
                         </Text>
                         <TouchableOpacity activeOpacity={0.7} style={{ marginLeft: RFPercentage(0.6) }} >
-                            <Text style={{ color: Colors.red, fontSize: RFPercentage(1.9), fontWeight: '500', textDecorationLine: 'underline' }} >
+                            <Text style={{ fontFamily: 'Roboto_400Regular', color: Colors.red, fontSize: RFPercentage(1.9), fontWeight: '500', textDecorationLine: 'underline' }} >
                                 Sign up
                             </Text>
                         </TouchableOpacity>
@@ -127,13 +128,11 @@ function LoginScreen(props) {
                     <View style={{ marginTop: RFPercentage(6), width: '100%', justifyContent: 'flex-start', alignItems: 'center' }} >
                         <MyAppButton
                             title="Log in"
-                            padding={RFPercentage(1.7)}
-                            onPress={() => handleLogin()}
-                            backgroundColor={Colors.primary}
-                            borderWidth={RFPercentage(0.1)}
+                            //  onPress={() => props.navigation.navigate("SignupScreen")}
+                            gradient={true}
                             borderColor={Colors.primary}
                             color={Colors.white}
-                            bold={false}
+                            fontFamily={'Roboto_500Medium'}
                             fontSize={RFPercentage(2.2)}
                             borderRadius={RFPercentage(1.2)}
                             width={"90%"}
@@ -160,11 +159,11 @@ function LoginScreen(props) {
                     ))}
 
                     <View style={{ marginTop: RFPercentage(4), width: '90%', justifyContent: 'flex-start', alignItems: 'center', alignSelf: 'center', flexDirection: 'row' }} >
-                        <Text style={{ color: Colors.black, fontSize: RFPercentage(1.9), fontWeight: '500' }} >
+                        <Text style={{ fontFamily: 'Roboto_400Regular', color: Colors.black, fontSize: RFPercentage(1.9), fontWeight: '500' }} >
                             Forget password?
                         </Text>
                         <TouchableOpacity activeOpacity={0.7} style={{ marginLeft: RFPercentage(0.6) }} >
-                            <Text style={{ color: Colors.red, fontSize: RFPercentage(1.9), fontWeight: '500', textDecorationLine: 'underline' }} >
+                            <Text style={{ fontFamily: 'Roboto_400Regular', color: Colors.red, fontSize: RFPercentage(1.9), fontWeight: '500', textDecorationLine: 'underline' }} >
                                 Reset Password
                             </Text>
                         </TouchableOpacity>

@@ -1,6 +1,10 @@
 import React from 'react';
+import { View, ActivityIndicator } from 'react-native'
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { Roboto_700Bold, Roboto_400Regular, Roboto_500Medium, useFonts } from "@expo-google-fonts/roboto"
+import { RFPercentage } from 'react-native-responsive-fontsize';
+
 // import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // import { Octicons } from "@expo/vector-icons";
 // import { RFPercentage } from 'react-native-responsive-fontsize';
@@ -20,10 +24,20 @@ import NewPlantScreen from './app/screens/NewPlantScreen';
 import HomeScreen from './app/screens/HomeScreen';
 import ScheduleScreen from './app/screens/ScheduleScreen';
 
+//config
+import Colors from './app/config/Colors';
+
 const Stack = createStackNavigator();
 // const Tab = createBottomTabNavigator();
 
+
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_500Medium,
+    Roboto_700Bold
+  })
 
   // const HomeTab = () => (
   //   <Tab.Navigator
@@ -84,9 +98,13 @@ export default function App() {
   //   </Tab.Navigator>
   // );
 
+  if (!fontsLoaded) return <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }} >
+    <ActivityIndicator size={RFPercentage(6)} color={Colors.primary} />
+  </View>
+
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="ScheduleScreen">
+      <Stack.Navigator headerMode="none" initialRouteName="WelcomeScreen">
         {/* <Stack.Screen name="HomeTab" component={HomeTab} /> */}
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />

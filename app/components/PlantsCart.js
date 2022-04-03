@@ -65,7 +65,7 @@ function PlantsCart(props) {
                                 {item.no}
                             </Text>
                         </View>
-                        <Text style={{ marginLeft: RFPercentage(2), color: Colors.black, fontSize: RFPercentage(2.6), fontWeight: 'bold' }} >
+                        <Text style={{ fontFamily: 'Roboto_700Bold', marginLeft: RFPercentage(2), color: Colors.black, fontSize: RFPercentage(2.7), fontWeight: 'bold' }} >
                             {item.title}
                         </Text>
                         <TouchableOpacity activeOpacity={0.4} style={{ position: 'absolute', right: 0 }} >
@@ -75,17 +75,17 @@ function PlantsCart(props) {
 
                     <View style={{ position: 'absolute', bottom: RFPercentage(1.2), left: RFPercentage(6), width: '90%', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }} >
                         <Image style={{ width: RFPercentage(3), height: RFPercentage(3) }} source={require('../../assets/images/p.png')} />
-                        <Text style={{ color: '#444444', fontSize: RFPercentage(1.8), marginLeft: RFPercentage(0.7) }}>
+                        <Text style={{ fontFamily: 'Roboto_400Regular', color: '#444444', fontSize: RFPercentage(1.8), marginLeft: RFPercentage(0.7) }}>
                             {item.plants}
                         </Text>
 
                         <Image style={{ marginLeft: RFPercentage(2.5), width: RFPercentage(3), height: RFPercentage(3) }} source={require('../../assets/images/l.png')} />
-                        <Text style={{ color: '#444444', fontSize: RFPercentage(1.8), marginLeft: RFPercentage(0.7) }}>
+                        <Text style={{ fontFamily: 'Roboto_400Regular', color: '#444444', fontSize: RFPercentage(1.8), marginLeft: RFPercentage(0.7) }}>
                             {item.level}
                         </Text>
 
                         <Image style={{ marginLeft: RFPercentage(2.5), width: RFPercentage(3), height: RFPercentage(3) }} source={require('../../assets/images/c.png')} />
-                        <Text style={{ color: '#444444', fontSize: RFPercentage(1.8), marginLeft: RFPercentage(0.7) }}>
+                        <Text style={{ fontFamily: 'Roboto_400Regular', color: '#444444', fontSize: RFPercentage(1.8), marginLeft: RFPercentage(0.7) }}>
                             {item.date}
                         </Text>
                     </View>

@@ -7,10 +7,10 @@ import { Ionicons } from '@expo/vector-icons';
 
 //components
 import Screen from './../components/Screen';
+import MyAppButton from './../components/common/MyAppButton';
 
 //config
 import Colors from '../config/Colors';
-import MyAppButton from './../components/common/MyAppButton';
 
 function ScheduleScreen(props) {
 
@@ -50,7 +50,7 @@ function ScheduleScreen(props) {
         <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: "center", backgroundColor: Colors.white }}>
 
             <View style={{ marginTop: RFPercentage(2), width: '90%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
-                <Text style={{ color: Colors.black, fontWeight: 'bold', fontSize: RFPercentage(3.2) }} >
+                <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.black, fontWeight: 'bold', fontSize: RFPercentage(3.2) }} >
                     Schedule
                 </Text>
                 <TouchableOpacity activeOpacity={0.4} style={{ position: 'absolute', left: 0 }} >
@@ -64,7 +64,7 @@ function ScheduleScreen(props) {
 
 
                     <View style={{ marginTop: RFPercentage(2.5), width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
-                        <Text style={{ marginTop: RFPercentage(4), color: Colors.black, fontSize: RFPercentage(3.5), fontWeight: Platform.OS == 'android' ? 'bold' : '600' }} >
+                        <Text style={{ fontFamily: 'Roboto_700Bold', marginTop: RFPercentage(4), color: Colors.black, fontSize: RFPercentage(3.5), fontWeight: Platform.OS == 'android' ? 'bold' : '600' }} >
                             Grow Light
                         </Text>
                     </View>
@@ -195,7 +195,7 @@ function ScheduleScreen(props) {
                     </View>
 
                     {/* Buttons */}
-                    <View style={{ marginTop: RFPercentage(4), width: '92%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
+                    <View style={{ marginTop: RFPercentage(4), width: '100%', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', alignSelf: 'center' }} >
                         <MyAppButton
                             title="Reset"
                             padding={RFPercentage(1.6)}
@@ -203,34 +203,30 @@ function ScheduleScreen(props) {
                             icon={true}
                             iconName={'restart'}
                             iconColor={Colors.red}
-                            backgroundColor={Colors.white}
                             borderWidth={RFPercentage(0.1)}
-                            fontSize={RFPercentage(2.2)}
+                            backgroundColor={Colors.white}
+                            fontSize={RFPercentage(2)}
                             borderColor={Colors.grey}
                             color={Colors.red}
                             bold={false}
-                            borderRadius={RFPercentage(1.2)}
-                            width={"45%"}
+                            width={"65%"}
                         />
-                        <View style={{ marginLeft: RFPercentage(2) }} />
+                        <View style={{ marginLeft: RFPercentage(-12) }} />
                         <MyAppButton
                             title="Save"
-                            padding={RFPercentage(1.6)}
-                            // onPress={() => handleConfirm()}
-                            backgroundColor={Colors.primary}
+                            // onPress={() => props.navigation.navigate("ResetPasswordScreen")}
+                            gradient={true}
                             icon={true}
-                            iconName={'content-save-all'}
+                            iconName={'content-save-all-outline'}
                             iconColor={Colors.white}
-                            borderWidth={RFPercentage(0.1)}
                             borderColor={Colors.primary}
                             color={Colors.white}
-                            bold={false}
-                            fontSize={RFPercentage(2.2)}
+                            fontFamily={'Roboto_500Medium'}
+                            fontSize={RFPercentage(2)}
                             borderRadius={RFPercentage(1.2)}
-                            width={"45%"}
+                            width={"65%"}
                         />
                     </View>
-
                 </View>
                 <View style={{ marginBottom: RFPercentage(15) }} />
             </ScrollView>

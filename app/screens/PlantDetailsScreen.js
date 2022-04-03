@@ -7,6 +7,7 @@ import Screen from './../components/Screen';
 
 //config
 import Colors from '../config/Colors';
+import { Roboto_700Bold } from '@expo-google-fonts/roboto';
 
 function PlantDetailsScreen(props) {
 
@@ -41,7 +42,7 @@ function PlantDetailsScreen(props) {
             </ImageBackground>
 
             <View style={{ marginTop: RFPercentage(3), width: '90%', justifyContent: 'center', alignItems: 'flex-start', alignSelf: 'center' }} >
-                <Text style={{ color: Colors.black, fontSize: RFPercentage(3.6), fontWeight: Platform.OS == 'android' ? 'bold' : '600' }} >
+                <Text style={{ fontFamily: "Roboto_700Bold", color: Colors.black, fontSize: RFPercentage(3.6), fontWeight: Platform.OS == 'android' ? 'bold' : '600' }} >
                     Apple Tree
                 </Text>
             </View>
