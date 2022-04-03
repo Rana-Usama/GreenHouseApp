@@ -126,7 +126,7 @@ function SignupScreen(props) {
                     <View style={{ marginTop: RFPercentage(6), width: '100%', justifyContent: 'flex-start', alignItems: 'center' }} >
                         <MyAppButton
                             title="Sign up"
-                            onPress={() => props.navigation.navigate("ConfirmationScreen")}
+                            onPress={() => props.navigation.navigate("LoginScreen")}
                             gradient={true}
                             borderColor={Colors.primary}
                             color={Colors.white}

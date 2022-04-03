@@ -10,7 +10,6 @@ import MyAppButton from '../components/common/MyAppButton';
 
 //config
 import Colors from '../config/Colors';
-import { Roboto_400Regular } from '@expo-google-fonts/roboto';
 
 function LoginScreen(props) {
 
@@ -128,7 +127,7 @@ function LoginScreen(props) {
                     <View style={{ marginTop: RFPercentage(6), width: '100%', justifyContent: 'flex-start', alignItems: 'center' }} >
                         <MyAppButton
                             title="Log in"
-                            //  onPress={() => props.navigation.navigate("SignupScreen")}
+                            onPress={() => props.navigation.navigate("ConfirmationScreen")}
                             gradient={true}
                             borderColor={Colors.primary}
                             color={Colors.white}
