@@ -115,7 +115,7 @@ function SignupScreen(props) {
                         <Text style={{ fontFamily: 'Roboto_400Regular', color: Colors.black, fontSize: RFPercentage(1.9), fontWeight: '500' }} >
                             Don't have an account?
                         </Text>
-                        <TouchableOpacity activeOpacity={0.7} style={{ marginLeft: RFPercentage(0.6) }} >
+                        <TouchableOpacity onPress={() => props.navigation.navigate("LoginScreen")} activeOpacity={0.7} style={{ marginLeft: RFPercentage(0.6) }} >
                             <Text style={{ fontFamily: 'Roboto_400Regular', color: Colors.red, fontSize: RFPercentage(1.9), fontWeight: '500', textDecorationLine: 'underline' }} >
                                 Login
                             </Text>

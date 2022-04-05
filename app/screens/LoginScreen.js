@@ -161,7 +161,7 @@ function LoginScreen(props) {
                         <Text style={{ fontFamily: 'Roboto_400Regular', color: Colors.black, fontSize: RFPercentage(1.9), fontWeight: '500' }} >
                             Forget password?
                         </Text>
-                        <TouchableOpacity activeOpacity={0.7} style={{ marginLeft: RFPercentage(0.6) }} >
+                        <TouchableOpacity onPress={() => props.navigation.navigate("ResetPasswordScreen")} activeOpacity={0.7} style={{ marginLeft: RFPercentage(0.6) }} >
                             <Text style={{ fontFamily: 'Roboto_400Regular', color: Colors.red, fontSize: RFPercentage(1.9), fontWeight: '500', textDecorationLine: 'underline' }} >
                                 Reset Password
                             </Text>
