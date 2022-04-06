@@ -104,7 +104,7 @@ function HomeScreen(props) {
                     Welcome Back
                 </Text>
                 <Text style={{ fontFamily: 'Roboto_700Bold', color: Colors.red, fontSize: RFPercentage(2.5), fontWeight: 'bold' }} >
-                    ,Jhon
+                    , Jhon
                 </Text>
                 <View style={{ position: 'absolute', right: 0, backgroundColor: Colors.white, width: RFPercentage(7), height: RFPercentage(7), borderColor: Colors.primary, borderWidth: RFPercentage(0.1), justifyContent: 'center', alignItems: 'center', borderRadius: RFPercentage(30) }} >
                     <Image style={{ width: RFPercentage(6.2), height: RFPercentage(6.2) }} source={require('../../assets/images/profile.png')} />
